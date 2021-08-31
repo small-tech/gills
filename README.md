@@ -2,7 +2,7 @@
 
 ![Screenshot of Gills showing the empty line after the command and the command output](./gills.png)
 
-Gills is a very simple Fish shell plugin that adds an empty line after your prompt and before the output of your command to balance the whitespace around them so you can more easily separate your prompts from your command output while skimming your terminal’s scrollback buffer.
+Gills is a very simple Fish shell plugin that adds an empty line after your prompt and the output of your command to balance the whitespace around them so you can more easily separate your prompts from your command output while skimming your terminal’s scrollback buffer.
 
 It also handles a couple of special cases like `cd`, `pushd`, and `popd` that do not produce any output. In those cases, it doesn’t add the additional empty line. If you find any other edge cases, please feel free to open an issue or a pull request.
 
@@ -18,7 +18,7 @@ fisher install small-tech/gills
 
 ## How it works
 
-Technically, like basically everything else in Fish shell, [it’s just a function](https://zerokspot.com/weblog/2016/01/16/fishy-functions/) that handles Fish shell’s `fish_postexec` event.
+Technically, like basically everything else in Fish shell, [it’s just a function](https://zerokspot.com/weblog/2016/01/16/fishy-functions/) that handles Fish shell’s `fish_preexec` & `fish_postexec` events.
 
 ## Like this? Fund us!
 
