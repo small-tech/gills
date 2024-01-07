@@ -1,6 +1,6 @@
 # Unless we’re clearing the screen, add a line before the prompt.
 function add_empty_line_before_prompt --on-event fish_postexec
-    if not string match -r -q 'clear.*' $argv
+    if not string match -r -q 'clear.*|reset.*' $argv
         printf '\n'
     end
 end
@@ -9,7 +9,7 @@ end
 # leave an empty space before the command to better
 # delinate the command output from the command itself.
 function add_empty_line_before_command --on-event fish_preexec
-    if not string match -r -q 'cd.*|popd.*|pushd.*' $argv
+    if not string match -r -q 'cd.*|popd.*|pushd.*|prevd.*|nextd.*' $argv
         printf '\n'
     end
 end
